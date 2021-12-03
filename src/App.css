@@ -1,38 +1,92 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  font-family: "Roboto", sans-serif;
+  color: #212529;
+  background-color: #f8f9fa;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* ******************************** */
+/* ************header************** */
+/* ******************************** */
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 7rem;
+  background-color: #748ffc;
+  border-bottom: 5px solid #212529;
 }
 
-.App-link {
-  color: #61dafb;
+#pokemon-logo {
+  height: 5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* ******************************** */
+/* ************score************** */
+/* ******************************** */
+
+.score {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.score > p {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+/* ******************************** */
+/* ************cards ************** */
+/* ******************************** */
+
+.game-board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cards-container {
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  justify-items: center;
+  gap: 2rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  width: 8rem;
+  height: 10rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.card-image {
+  width: 100%;
+}
+
+.card > p {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.card:hover {
+  transform: scale(1.2);
 }

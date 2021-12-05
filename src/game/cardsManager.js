@@ -7,14 +7,14 @@ const P = new Pokedex.Pokedex();
 const getRandomPokemon = () => Math.floor(Math.random() * 151 + 1);
 
 //Too much to be in a separate function? Should I add the condition directely on the if statement?
-const notDuplicate = (num, array) => array.every((x) => x !== num);
+const notDuplicate = (array, item) => array.every((x) => x !== item);
 
 //Could not think of a simpler way to do the next two functions. Any ideas welcome
 const generateRandomIdList = (size) => {
   const list = [];
   while (list.length < size) {
     const randomPokemon = getRandomPokemon();
-    if (notDuplicate(randomPokemon, list)) {
+    if (notDuplicate(list, randomPokemon)) {
       list.push(randomPokemon);
     }
   }
@@ -33,4 +33,10 @@ const getPokemonData = (pokemons) =>
 
 const shuffleCards = (cards) => fp.shuffle(cards);
 
-export { generateRandomIdList, getPokemons, getPokemonData, shuffleCards };
+export {
+  generateRandomIdList,
+  getPokemons,
+  getPokemonData,
+  shuffleCards,
+  notDuplicate,
+};

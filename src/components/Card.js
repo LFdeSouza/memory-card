@@ -1,12 +1,9 @@
 import React from "react";
 
-const Card = ({
-  pokemonImage = "	https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
-  pokemonName = "charmander",
-}) => {
+const Card = ({ pokemonImage, pokemonName, pokemonId, onChoose }) => {
   return (
-    <div className="card">
-      <img src={pokemonImage} alt={pokemonName} />
+    <div className="card" id={pokemonId} onClick={onChoose}>
+      <img className="card-image" src={pokemonImage} alt={pokemonName} />
       <p>{pokemonName}</p>
     </div>
   );

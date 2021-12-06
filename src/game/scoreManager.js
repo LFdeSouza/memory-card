@@ -1,4 +1,3 @@
-import fp from "lodash/fp";
 import { notDuplicate } from "./cardsManager";
 
 const isGameOver = (chosenCards, currentCard) =>
@@ -13,13 +12,10 @@ const updateBestScore = (score, bestScore) =>
 
 const updateChosenCards = (chosenCards, card) => [...chosenCards, card];
 
-const resetChosenCards = () => [];
-
 export {
   isGameOver,
   updateScore,
   updateBestScore,
   resetScore,
   updateChosenCards,
-  resetChosenCards,
 };

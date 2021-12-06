@@ -33,10 +33,13 @@ const getPokemonData = (pokemons) =>
 
 const shuffleCards = (cards) => fp.shuffle(cards);
 
+const resetChosenCards = () => [];
+
 export {
   generateRandomIdList,
   getPokemons,
   getPokemonData,
   shuffleCards,
   notDuplicate,
+  resetChosenCards,
 };

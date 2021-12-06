@@ -6,12 +6,14 @@ const isGameOver = (chosenCards, currentCard) =>
 
 const updateScore = (score) => ++score;
 
-const resetScore = (score) => 0;
+const resetScore = () => 0;
 
 const updateBestScore = (score, bestScore) =>
-  score > bestScore ? score : bestScore;
+  score >= bestScore ? score : bestScore;
 
 const updateChosenCards = (chosenCards, card) => [...chosenCards, card];
+
+const resetChosenCards = () => [];
 
 export {
   isGameOver,
@@ -19,4 +21,5 @@ export {
   updateBestScore,
   resetScore,
   updateChosenCards,
+  resetChosenCards,
 };

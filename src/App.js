@@ -8,12 +8,13 @@ import {
   getPokemonData,
   shuffleCards,
 } from "./game/cardsManager";
-import fp from "lodash/fp";
 import {
   isGameOver,
   updateBestScore,
   updateScore,
   updateChosenCards,
+  resetScore,
+  resetChosenCards,
 } from "./game/scoreManager";
 
 function App() {
@@ -28,11 +29,18 @@ function App() {
     getPokemons(randomPokemonsId).then(getPokemonData).then(setPokemons);
   }, []);
 
+  useEffect(
+    () => setBestScore(updateBestScore(currentScore, bestScore)),
+    [currentScore]
+  );
+
   const playRound = (card) => {
     if (!isGameOver(chosenCards, card)) {
       setChosenCards(updateChosenCards(chosenCards, card));
       setCurrentScore(updateScore(currentScore));
-      setBestScore(updateBestScore(currentScore, bestScore));
+    } else {
+      setChosenCards(resetChosenCards());
+      setCurrentScore(resetScore());
     }
     setPokemons(shuffleCards(pokemons));
   };
